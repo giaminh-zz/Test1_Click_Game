@@ -114,7 +114,7 @@ const GamePlay = () => {
                 if(clickPoint.includes(num)) return null;
                 return(
                    <div onClick={()=>handleClickNum(num)} key={num} style={{position:"absolute", left: pos.x - radius, top: pos.y - radius, width: radius * 2, height: radius * 2,
-                    borderRadius: "50%", border:"2px solid #333", display: "flex", justifyContent:"center", cursor: num === nextNumber ?"pointer": "default", backgroundColor: num === nextNumber ? "#e67e22" : "white",
+                    borderRadius: "50%", border:"2px solid #333", display: "flex", justifyContent:"center", alignItems:"center", cursor: num === nextNumber ?"pointer": "default", backgroundColor: num === nextNumber ? "#e67e22" : "white",
                     userSelect: "none"
                    }}>
                          {num}
@@ -124,7 +124,7 @@ const GamePlay = () => {
              }
         </div>
         <div style={{marginLeft: 50, textAlign:"center", alignItems: "center", width: 300, height: 500}}>
-              <h1>{gameover ? <a style={{color: "#c0392b"}}>Game Over</a> : allClear ? "All Clear" : "Let Plays"}</h1>
+              <h1>{gameover ? <span style={{color: "#c0392b"}}>Game Over</span> : allClear ? "All Clear" : "Let Plays"}</h1>
               <div >
                  <h1>Point</h1>
                  <input type='number' onChange={InputChange} value={pointCount} disabled={gameStart} min={1} max={100}/>
